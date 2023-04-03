@@ -1,12 +1,12 @@
 package com.pasindujr.bumblebeeloans.dao;
 
-import com.pasindujr.bumblebeeloans.model.Product;
+import com.pasindujr.bumblebeeloans.model.Category;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductManager {
+public class CategoryManager {
 	
 	/*
 	 * 1. Import the Package
@@ -29,15 +29,14 @@ public class ProductManager {
 		return connector.getDbConnection();
 	}
 		
-	public boolean addProduct(Product product) throws ClassNotFoundException, SQLException {
+	public boolean addCategory(Category category) throws ClassNotFoundException, SQLException {
 				
 		Connection connection = getConncetion();
 		
-		String query = "INSERT INTO product (name, price) VALUES ( ?, ?)";
+		String query = "INSERT INTO category (name) VALUES (?)";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setString(1, product.getName());
-		ps.setDouble(2, product.getPrice());
+		ps.setString(1, category.getName());
 		
 		int result = ps.executeUpdate();
 		
@@ -47,64 +46,61 @@ public class ProductManager {
 		return result > 0;
 	}
 	
-	public Product getSpecificProduct(int productCode) throws ClassNotFoundException, SQLException {
+	public Category getSpecificCategory(int categoryId) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();
 		
-		String query = "SELECT * FROM product WHERE product_code = ?";
+		String query = "SELECT * FROM category WHERE category_id = ?";
 		PreparedStatement ps = connection.prepareStatement(query);
 		
-		ps.setInt(1, productCode);
+		ps.setInt(1, categoryId);
 		
 		ResultSet rs = ps.executeQuery();
-		Product product = new Product();
+		Category category = new Category();
 		while(rs.next()) {
-			product.setProductCode(rs.getInt("product_code"));
-			product.setName(rs.getString("name"));
-			product.setPrice(rs.getDouble("price"));
+			category.setCategoryId(rs.getInt("category_id"));
+			category.setName(rs.getString("name"));
 		}
 		
 		ps.close();
 		connection.close();		
-		return product;
+		return category;
 	}
 	
-	public List<Product> getAllProducts() throws ClassNotFoundException, SQLException {
+	public List<Category> getAllCategories() throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();	
 		
-		String query = "SELECT * FROM PRODUCT";
+		String query = "SELECT * FROM CATEGORY";
 		
 		Statement st = connection.createStatement();
 		ResultSet rs = st.executeQuery(query);
 		
-		List<Product> productList = new ArrayList<Product>();
+		List<Category> categoryList = new ArrayList<Category>();
 		
 		while(rs.next()) {
 			
-			Product product = new Product();
-			product.setProductCode(rs.getInt("product_code"));
-			product.setName(rs.getString("name"));
-			product.setPrice(rs.getDouble("price"));
+			Category category = new Category();
+			category.setCategoryId(rs.getInt("category_id"));
+			category.setName(rs.getString("name"));
 			
-			productList.add(product);
+			categoryList.add(category);
 		}
 		
 		st.close();
 		connection.close();		
-		return productList;
+		return categoryList;
 	}
 	
-	public boolean updateProduct(Product product) throws ClassNotFoundException, SQLException {
+	public boolean updateCategory(Category category) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();	
 		
-		String query = "UPDATE product SET name = ?, price = ? WHERE product_code = ?";
+		String query = "UPDATE category SET name = ? WHERE category_id = ?";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setString(1, product.getName());
-		ps.setDouble(2, product.getPrice());
-		ps.setInt(3, product.getProductCode());		
+		ps.setString(1, category.getName());
+		ps.setInt(2, category.getCategoryId());
 		
 		int result = ps.executeUpdate();
 		
@@ -114,14 +110,14 @@ public class ProductManager {
 		return result > 0;
 	}
 	
-	public boolean deleteProduct(int productCode) throws ClassNotFoundException, SQLException {
+	public boolean deleteCategory(int categoryId) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();
 		
-		String query = "DELETE FROM PRODUCT WHERE product_code = ?";
+		String query = "DELETE FROM CATEGORY WHERE category_id = ?";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setInt(1, productCode);
+		ps.setInt(1, categoryId);
 		
 		int result = ps.executeUpdate();
 		

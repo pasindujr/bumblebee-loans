@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
+<%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <!--
 * Bootstrap Simple Admin Template
@@ -35,6 +36,7 @@
             <li>
                 <a href="category"><i class="fas fa-file-alt"></i>Manage Category</a>
             </li>
+
         </ul>
     </nav>
     <div id="body" class="active">
@@ -54,10 +56,12 @@
                         <div class="nav-dropdown">
                             <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary"
                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                <i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;"
+                                                                                     class="fas fa-caret-down"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                 <ul class="nav-list">
+
                                     <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                     </li>
                                 </ul>
@@ -70,46 +74,24 @@
         <br/>
         <br/>
         <div class="container">
-            <div class="container">
-                <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
                     <tag:if test="${message != null}">
                         <div class="alert alert-success" role="alert">
                                 ${message}
                         </div>
                     </tag:if>
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">Brand ID Search</div>
-                            <div class="card-body">
-                                <form method="get" action="brand">
-                                    <input required type="text" id="brandId" name="brandId" class="form-control"/>
-                                    <input type="hidden" name="type" value="specific"/>
-                                    <br/>
-                                    <button type="submit" class="btn btn-primary">Search the Product</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <br/>
-                    <br/>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">Update Product</div>
-                                <div class="card-body">
-                                    <form method="post" action="brand">
-                                        <label for="brandId">Brand Id: </label>
-                                        <input type="text" id="brandId" name="brandId" class="form-control"
-                                               readonly="readonly" value="${brand.brandId}"/>
-                                        <label for="brandName">Product Name: </label>
-                                        <input type="text" id="brandName" name="brandName" class="form-control"
-                                               value="${brand.name}"/>
-                                        <input type="hidden" name="type" value="update"/>
-                                        <br/>
-                                        <button type="submit" class="btn btn-warning">Update Product</button>
-                                    </form>
-                                </div>
-                            </div>
+
+                    <div class="card">
+                        <div class="card-header">Create New Product</div>
+                        <div class="card-body">
+                            <form method="post" action="brand">
+                                <label for="brandName">Product Name: </label>
+                                <input type="text" id="brandName" name="brandName" class="form-control"/>
+                                <input type="hidden" name="type" value="add"/>
+                                </br>
+                                <button type="submit" class="btn btn-info">Register Product</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -117,11 +99,11 @@
         </div>
     </div>
 </div>
-        <script src="assets/vendor/jquery/jquery.min.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/chartsjs/Chart.min.js"></script>
-        <script src="assets/js/dashboard-charts.js"></script>
-        <script src="assets/js/script.js"></script>
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/chartsjs/Chart.min.js"></script>
+<script src="assets/js/dashboard-charts.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>

@@ -79,10 +79,10 @@
                     </tag:if>
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">Brand ID Search</div>
+                            <div class="card-header">Category ID Search</div>
                             <div class="card-body">
-                                <form method="get" action="brand">
-                                    <input required type="text" id="brandId" name="brandId" class="form-control"/>
+                                <form method="get" action="category">
+                                    <input required type="text" id="categoryId" name="categoryId" class="form-control"/>
                                     <input type="hidden" name="type" value="specific"/>
                                     <br/>
                                     <button type="submit" class="btn btn-primary">Search the Product</button>
@@ -97,13 +97,13 @@
                             <div class="card">
                                 <div class="card-header">Update Product</div>
                                 <div class="card-body">
-                                    <form method="post" action="brand">
-                                        <label for="brandId">Brand Id: </label>
-                                        <input type="text" id="brandId" name="brandId" class="form-control"
-                                               readonly="readonly" value="${brand.brandId}"/>
-                                        <label for="brandName">Product Name: </label>
-                                        <input type="text" id="brandName" name="brandName" class="form-control"
-                                               value="${brand.name}"/>
+                                    <form method="post" action="category">
+                                        <label for="categoryId">Category Id: </label>
+                                        <input type="text" id="categoryId" name="categoryId" class="form-control"
+                                               readonly="readonly" value="${category.categoryId}"/>
+                                        <label for="categoryName">Category Name: </label>
+                                        <input type="text" id="categoryName" name="categoryName" class="form-control"
+                                               value="${category.name}"/>
                                         <input type="hidden" name="type" value="update"/>
                                         <br/>
                                         <button type="submit" class="btn btn-warning">Update Product</button>
