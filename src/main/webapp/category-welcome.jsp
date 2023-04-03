@@ -83,40 +83,40 @@
                 <div class="row">
                     <ul class="nav nav-tabs nav-dark">
                         <button type="button" class="btn btn-primary">
-                            <a href="brand-register.jsp">Register Brand</a>
+                            <a href="category-register.jsp">Register Category</a>
                         </button>
                     </ul>
                     <p>${message}</p>
                     <br/>
                     <div class="col-md-12 col-lg-12">
                         <div class="card">
-                            <div class="card-header">Brand Table</div>
+                            <div class="card-header">Category Table</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>Brand ID</th>
-                                            <th>Brand Name</th>
+                                            <th>Category ID</th>
+                                            <th>Category Name</th>
                                             <th>Actions</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tag:forEach var="brand" items="${brandList}">
+                                        <tag:forEach var="category" items="${categoryList}">
                                             <tr>
-                                                <td>${brand.brandId}</td>
-                                                <td>${brand.name}</td>
+                                                <td>${category.categoryId}</td>
+                                                <td>${category.name}</td>
                                                 <td>
-                                                    <form method="get" action="brand">
-                                                        <input type="hidden" name="brandId"
-                                                               value="${brand.brandId}"/>
+                                                    <form method="get" action="category">
+                                                        <input type="hidden" name="categoryId"
+                                                               value="${category.categoryId}"/>
                                                         <input type="hidden" name="type" value="specific"/>
                                                         <button type="submit" class="btn btn-warning">Edit
                                                         </button>
                                                     </form>
-                                                    <form method="post" action="brand">
-                                                        <input type="hidden" name="brandId"
-                                                               value="${brand.brandId}"/>
+                                                    <form method="post" action="category">
+                                                        <input type="hidden" name="categoryId"
+                                                               value="${category.categoryId}"/>
                                                         <input type="hidden" name="type" value="delete"/>
                                                         <button type="submit" class="btn btn-danger">Delete
                                                         </button>
