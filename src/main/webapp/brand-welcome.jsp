@@ -173,45 +173,42 @@
                 <div class="row">
                     <ul class="nav nav-tabs nav-dark">
                         <button type="button" class="btn btn-primary">
-                            <a href="brand-register-product.jsp">Register Product</a>
+                            <a href="brand-register.jsp">Register Brand</a>
                         </button>
                     </ul>
-                    <p>${message}</p>
+                    <p>${DeletedMessage}</p>
                     <br/>
                     <div class="col-md-12 col-lg-12">
                         <div class="card">
-                            <div class="card-header">Product Table</div>
+                            <div class="card-header">Brand Table</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>Product ID</th>
-                                            <th>Product Name</th>
-                                            <th>Price</th>
+                                            <th>Brand ID</th>
+                                            <th>Brand Name</th>
                                             <th>Actions</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tag:forEach var="product" items="${productList}">
+                                        <tag:forEach var="brand" items="${brandList}">
                                             <tr>
-                                                <td>${product.productCode}</td>
-                                                <td>${product.name}</td>
-                                                <td>${product.price}</td>
+                                                <td>${brand.brandId}</td>
+                                                <td>${brand.name}</td>
                                                 <td>
                                                     <form method="get" action="brand">
-                                                        <input type="hidden" name="productCode"
-                                                               value="${product.productCode}"/>
+                                                        <input type="hidden" name="brandId"
+                                                               value="${brand.brandId}"/>
                                                         <input type="hidden" name="type" value="specific"/>
-                                                        <button type="submit" class="btn btn-warning">Edit the Product
+                                                        <button type="submit" class="btn btn-warning">Edit
                                                         </button>
                                                     </form>
                                                     <form method="post" action="brand">
-                                                        <input type="hidden" name="productCode"
-                                                               value="${product.productCode}"/>
+                                                        <input type="hidden" name="brandId"
+                                                               value="${brand.brandId}"/>
                                                         <input type="hidden" name="type" value="delete"/>
-                                                        <button type="submit" class="btn btn-danger">Delete the
-                                                            Product
+                                                        <button type="submit" class="btn btn-danger">Delete
                                                         </button>
                                                     </form>
                                                 </td>

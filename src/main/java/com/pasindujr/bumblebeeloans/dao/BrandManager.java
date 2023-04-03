@@ -1,12 +1,12 @@
 package com.pasindujr.bumblebeeloans.dao;
 
-import com.pasindujr.bumblebeeloans.model.Product;
+import com.pasindujr.bumblebeeloans.model.Brand;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductManager {
+public class BrandManager {
 	
 	/*
 	 * 1. Import the Package
@@ -29,15 +29,14 @@ public class ProductManager {
 		return connector.getDbConnection();
 	}
 		
-	public boolean addProduct(Product product) throws ClassNotFoundException, SQLException {
+	public boolean addBrand(Brand brand) throws ClassNotFoundException, SQLException {
 				
 		Connection connection = getConncetion();
 		
-		String query = "INSERT INTO product (name, price) VALUES ( ?, ?)";
+		String query = "INSERT INTO brand (name) VALUES (?)";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setString(1, product.getName());
-		ps.setDouble(2, product.getPrice());
+		ps.setString(1, brand.getName());
 		
 		int result = ps.executeUpdate();
 		
@@ -47,64 +46,61 @@ public class ProductManager {
 		return result > 0;
 	}
 	
-	public Product getSpecificProduct(int productCode) throws ClassNotFoundException, SQLException {
+	public Brand getSpecificBrand(int brandId) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();
 		
-		String query = "SELECT * FROM product WHERE product_code = ?";
+		String query = "SELECT * FROM brand WHERE brand_id = ?";
 		PreparedStatement ps = connection.prepareStatement(query);
 		
-		ps.setInt(1, productCode);
+		ps.setInt(1, brandId);
 		
 		ResultSet rs = ps.executeQuery();
-		Product product = new Product();
+		Brand brand = new Brand();
 		while(rs.next()) {
-			product.setProductCode(rs.getInt("product_code"));
-			product.setName(rs.getString("name"));
-			product.setPrice(rs.getDouble("price"));
+			brand.setBrandId(rs.getInt("brand_id"));
+			brand.setName(rs.getString("name"));
 		}
 		
 		ps.close();
 		connection.close();		
-		return product;
+		return brand;
 	}
 	
-	public List<Product> getAllProducts() throws ClassNotFoundException, SQLException {
+	public List<Brand> getAllBrands() throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();	
 		
-		String query = "SELECT * FROM PRODUCT";
+		String query = "SELECT * FROM BRAND";
 		
 		Statement st = connection.createStatement();
 		ResultSet rs = st.executeQuery(query);
 		
-		List<Product> productList = new ArrayList<Product>();
+		List<Brand> brandList = new ArrayList<Brand>();
 		
 		while(rs.next()) {
 			
-			Product product = new Product();
-			product.setProductCode(rs.getInt("product_code"));
-			product.setName(rs.getString("name"));
-			product.setPrice(rs.getDouble("price"));
+			Brand brand = new Brand();
+			brand.setBrandId(rs.getInt("brand_id"));
+			brand.setName(rs.getString("name"));
 			
-			productList.add(product);
+			brandList.add(brand);
 		}
 		
 		st.close();
 		connection.close();		
-		return productList;
+		return brandList;
 	}
 	
-	public boolean updateProduct(Product product) throws ClassNotFoundException, SQLException {
+	public boolean updateBrand(Brand brand) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();	
 		
-		String query = "UPDATE product SET name = ?, price = ? WHERE product_code = ?";
+		String query = "UPDATE brand SET name = ? WHERE brand_id = ?";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setString(1, product.getName());
-		ps.setDouble(2, product.getPrice());
-		ps.setInt(3, product.getProductCode());		
+		ps.setString(1, brand.getName());
+		ps.setInt(2, brand.getBrandId());
 		
 		int result = ps.executeUpdate();
 		
@@ -114,14 +110,14 @@ public class ProductManager {
 		return result > 0;
 	}
 	
-	public boolean deleteProduct(int productCode) throws ClassNotFoundException, SQLException {
+	public boolean deleteBrand(int brandId) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConncetion();
 		
-		String query = "DELETE FROM PRODUCT WHERE product_code = ?";
+		String query = "DELETE FROM BRAND WHERE brand_id = ?";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setInt(1, productCode);
+		ps.setInt(1, brandId);
 		
 		int result = ps.executeUpdate();
 		

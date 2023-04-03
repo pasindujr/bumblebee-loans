@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
+<%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <!--
 * Bootstrap Simple Admin Template
@@ -164,17 +165,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="alert alert-success" role="alert">
-                        ${message}
-                    </div>
+                    <tag:if test="${message != null}">
+                        <div class="alert alert-success" role="alert">
+                                ${message}
+                        </div>
+                    </tag:if>
+                    
                     <div class="card">
                         <div class="card-header">Create New Product</div>
                         <div class="card-body">
                             <form method="post" action="brand">
-                                <label for="txtProductName">Product Name: </label>
-                                <input type="text" id="txtProductName" name="productName" class="form-control"/>
-                                <label for="txtPrice">Price: </label>
-                                <input type="number" id="txtPrice" name="price" class="form-control"/>
+                                <label for="brandName">Product Name: </label>
+                                <input type="text" id="brandName" name="brandName" class="form-control"/>
                                 <input type="hidden" name="type" value="add"/>
                                 </br>
                                 <button type="submit" class="btn btn-info">Register Product</button>

@@ -160,19 +160,21 @@
             </div>
         </nav>
         <br/>
-        <p>${message}</p>
         <br/>
         <div class="container">
             <div class="container">
                 <div class="row">
+                    <tag:if test="${message != null}">
+                        <div class="alert alert-success" role="alert">
+                                ${message}
+                        </div>
+                    </tag:if>
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">Search Product</div>
+                            <div class="card-header">Brand ID Search</div>
                             <div class="card-body">
-                                <h5 class="card-title">Product Code to Search:</h5>
-                                <h3>Search The Product:</h3>
                                 <form method="get" action="brand">
-                                    <input type="text" id="txtProductCode" name="productCode" class="form-control"/>
+                                    <input required type="text" id="brandId" name="brandId" class="form-control"/>
                                     <input type="hidden" name="type" value="specific"/>
                                     <br/>
                                     <button type="submit" class="btn btn-primary">Search the Product</button>
@@ -188,15 +190,12 @@
                                 <div class="card-header">Update Product</div>
                                 <div class="card-body">
                                     <form method="post" action="brand">
-                                        <label for="txtProductCode">Product Code: </label>
-                                        <input type="text" id="txtProductCode" name="productCode" class="form-control"
-                                               readonly="readonly" value="${product.productCode}"/>
-                                        <label for="txtProductName">Product Name: </label>
-                                        <input type="text" id="txtProductName" name="productName" class="form-control"
-                                               value="${product.name}"/>
-                                        <label for="txtPrice">Price: </label>
-                                        <input type="number" id="txtPrice" name="price" class="form-control"
-                                               value="${product.price}"/>
+                                        <label for="brandId">Brand Id: </label>
+                                        <input type="text" id="brandId" name="brandId" class="form-control"
+                                               readonly="readonly" value="${brand.brandId}"/>
+                                        <label for="brandName">Product Name: </label>
+                                        <input type="text" id="brandName" name="brandName" class="form-control"
+                                               value="${brand.name}"/>
                                         <input type="hidden" name="type" value="update"/>
                                         <br/>
                                         <button type="submit" class="btn btn-warning">Update Product</button>

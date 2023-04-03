@@ -13,9 +13,8 @@ public class MySqlConnectorImpl implements DbConnector {
 		String url = "jdbc:mysql://127.0.0.1:3306/icbt_test";
 		String userName = "pasindu";
 		String password = "";
-		
-		Connection connection = DriverManager.getConnection(url, userName, password);
-		return connection;
+
+		return DriverManager.getConnection(url, userName, password);
 	}
 
 	
