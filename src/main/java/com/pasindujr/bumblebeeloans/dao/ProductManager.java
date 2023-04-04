@@ -109,10 +109,10 @@ public class ProductManager {
 		
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setString(1, product.getName());
-		ps.setInt(2, product.getProductId());
-		ps.setString(3, product.getPrice());
+		ps.setString(2, product.getPrice());
+		ps.setString(3, product.getCategory());
 		ps.setString(4, product.getBrand());
-		ps.setString(5, product.getCategory());
+		ps.setInt(5, product.getProductId());
 
 		int result = ps.executeUpdate();
 		

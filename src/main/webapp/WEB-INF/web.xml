@@ -37,4 +37,15 @@
         <servlet-name>ProductController</servlet-name>
         <url-pattern>/product</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StockController</servlet-name>
+        <display-name>StockController</display-name>
+        <description>This will handle all the stock related requests</description>
+        <servlet-class>com.pasindujr.bumblebeeloans.controller.StockController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StockController</servlet-name>
+        <url-pattern>/stock</url-pattern>
+    </servlet-mapping>
 </web-app>
