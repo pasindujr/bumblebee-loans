@@ -2,12 +2,7 @@
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
-<!--
-* Bootstrap Simple Admin Template
-* Version: 2.1
-* Author: Alexis Luna
-* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
--->
+
 <html lang="en">
 
 <head>
@@ -36,7 +31,6 @@
             <li>
                 <a href="category"><i class="fas fa-file-alt"></i>Manage Category</a>
             </li>
-
         </ul>
     </nav>
     <div id="body" class="active">
@@ -56,12 +50,10 @@
                         <div class="nav-dropdown">
                             <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary"
                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;"
-                                                                                     class="fas fa-caret-down"></i>
+                                <i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                 <ul class="nav-list">
-
                                     <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                     </li>
                                 </ul>
