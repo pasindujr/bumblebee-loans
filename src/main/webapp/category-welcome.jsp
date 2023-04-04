@@ -39,6 +39,12 @@
             <li>
                 <a href="category"><i class="fas fa-file-alt"></i>Manage Category</a>
             </li>
+            <li>
+                <a href="product"><i class="fas fa-file-alt"></i>Manage Product</a>
+            </li>
+            <li>
+                <a href="stock"><i class="fas fa-file-alt"></i>Manage Stock</a>
+            </li>
         </ul>
     </nav>
     <div id="body" class="active">
@@ -58,7 +64,8 @@
                         <div class="nav-dropdown">
                             <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary"
                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                <i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;"
+                                                                                     class="fas fa-caret-down"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                 <ul class="nav-list">
@@ -135,8 +142,8 @@
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" ></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 

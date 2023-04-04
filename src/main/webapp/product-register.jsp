@@ -36,9 +36,11 @@
             <li>
                 <a href="category"><i class="fas fa-file-alt"></i>Manage Category</a>
             </li>
-
             <li>
                 <a href="product"><i class="fas fa-file-alt"></i>Manage Product</a>
+            </li>
+            <li>
+                <a href="stock"><i class="fas fa-file-alt"></i>Manage Stock</a>
             </li>
 
         </ul>

@@ -36,6 +36,12 @@
             <li>
                 <a href="category"><i class="fas fa-file-alt"></i>Manage Category</a>
             </li>
+            <li>
+                <a href="product"><i class="fas fa-file-alt"></i>Manage Product</a>
+            </li>
+            <li>
+                <a href="stock"><i class="fas fa-file-alt"></i>Manage Stock</a>
+            </li>
 
         </ul>
     </nav>
@@ -99,10 +105,8 @@
         </div>
     </div>
 </div>
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/chartsjs/Chart.min.js"></script>
-<script src="assets/js/dashboard-charts.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 
