@@ -105,7 +105,7 @@ public class ProductManager {
 		
 		Connection connection = getConncetion();	
 		
-		String query = "UPDATE product SET name = ?, price = ?, brand = ?, category = ? WHERE category_id = ?";
+		String query = "UPDATE product SET name = ?, price = ?, brand = ?, category = ? WHERE product_id = ?";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setString(1, product.getName());

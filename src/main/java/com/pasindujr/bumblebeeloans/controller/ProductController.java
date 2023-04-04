@@ -106,11 +106,15 @@ public class ProductController extends HttpServlet {
 
         String message = null;
         Product product = new Product();
+        List<Brand> brandList = null;
+        List<Category> categoryList = null;
 
         int productId = Integer.parseInt(request.getParameter("productId"));
 
         try {
             product = service.getSpecificProduct(productId);
+            brandList = brandService.getAllBrands();
+            categoryList = categoryService.getAllCategories();
         } catch (ClassNotFoundException | SQLException e) {
 
             message = e.getMessage();
@@ -118,6 +122,8 @@ public class ProductController extends HttpServlet {
 
         request.setAttribute("message", message);
         request.setAttribute("product", product);
+        request.setAttribute("brandList", brandList);
+        request.setAttribute("categoryList", categoryList);
 
         RequestDispatcher rd = request.getRequestDispatcher("product-search-and-update.jsp");
         rd.forward(request, response);
