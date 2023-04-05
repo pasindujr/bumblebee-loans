@@ -12,6 +12,7 @@
 
 %>
 <!doctype html>
+
 <html lang="en">
 
 <head>
@@ -32,32 +33,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <tag:if test="${message != null}">
-                    <div class="alert alert-success" role="alert">
-                            ${message}
-                    </div>
-                </tag:if>
+
 
                 <div class="card">
-                    <div class="card-header">Create New Stock</div>
+                    <div class="card-header">Cards</div>
                     <div class="card-body">
-                        <form method="post" action="stock">
-
-                            <label for="product" class="form-label">Select a product</label>
-                            <select id="product" name="product" class="form-select" required>
-                                <option value="" selected>Choose...</option>
-                                <tag:forEach var="product" items="${productList}">
-                                    <option value="${product.productId}">${product.name}</option>
-                                </tag:forEach>
-                            </select>
-
-                            <label for="quantity">Quantity: </label>
-                            <input type="text" id="quantity" name="quantity" class="form-control"/>
-
-                            <input type="hidden" name="type" value="add"/>
-                            </br>
-                            <button type="submit" class="btn btn-info">Save Quantity</button>
-                        </form>
+                        test cards
                     </div>
                 </div>
             </div>
