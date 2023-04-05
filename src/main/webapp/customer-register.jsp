@@ -2,12 +2,6 @@
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
-<!--
-* Bootstrap Simple Admin Template
-* Version: 2.1
-* Author: Alexis Luna
-* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
--->
 <html lang="en">
 
 <head>

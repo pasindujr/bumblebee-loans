@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
+
+<%response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");%>
+
+<%
+    HttpSession httpSession = (HttpSession) request.getSession();
+    String user = (String) httpSession.getAttribute("loggedUser");
+    String role = (String) httpSession.getAttribute("role");
+    if (role != null && role.equals("ADMIN")) {
+
+%>
 <!doctype html>
-<!--
-* Bootstrap Simple Admin Template
-* Version: 2.1
-* Author: Alexis Luna
-* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
--->
+
 <html lang="en">
 
 <head>
@@ -75,6 +80,12 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
+<%
+    } else {
+        String redirectURL = "/bumblebee-loans/401.jsp";
+        response.sendRedirect(redirectURL);
+    }
+%>
 </body>
 
 </html>

@@ -63,7 +63,7 @@
 <script src="assets/js/script.js"></script>
 <%
     } else {
-        String redirectURL = "/bumblebee-loans/adminlogin.jsp";
+        String redirectURL = "/bumblebee-loans/401.jsp";
         response.sendRedirect(redirectURL);
     }
 %>

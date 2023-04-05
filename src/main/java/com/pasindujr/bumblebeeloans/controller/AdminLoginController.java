@@ -32,7 +32,7 @@ public class AdminLoginController extends HttpServlet {
                 HttpSession httpSession = request.getSession();
                 httpSession.setAttribute("loggedUser",admin.getName());
                 httpSession.setAttribute("role","ADMIN");
-                RequestDispatcher rd=request.getRequestDispatcher("manageInventory.jsp");
+                RequestDispatcher rd=request.getRequestDispatcher("dashboard.jsp");
                 rd.forward(request, response);
             }
             else {
