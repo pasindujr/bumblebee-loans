@@ -2,7 +2,12 @@
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
-
+<!--
+* Bootstrap Simple Admin Template
+* Version: 2.1
+* Author: Alexis Luna
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-->
 <html lang="en">
 
 <head>
@@ -23,22 +28,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <tag:if test="${message != null}">
-                    <div class="alert alert-success" role="alert">
-                            ${message}
-                    </div>
-                </tag:if>
+
 
                 <div class="card">
-                    <div class="card-header">Create New Product</div>
+                    <div class="card-header">Cards</div>
                     <div class="card-body">
-                        <form method="post" action="category">
-                            <label for="categoryName">Category Name: </label>
-                            <input type="text" id="categoryName" name="categoryName" class="form-control"/>
-                            <input type="hidden" name="type" value="add"/>
-                            </br>
-                            <button type="submit" class="btn btn-info">Register Product</button>
-                        </form>
+                        test cards
                     </div>
                 </div>
             </div>
