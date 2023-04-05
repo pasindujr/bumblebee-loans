@@ -70,4 +70,15 @@
         <servlet-name>AdminLoginController</servlet-name>
         <url-pattern>/adminlogin</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <display-name>LogoutController</display-name>
+        <description>This will handle all the logout related requests</description>
+        <servlet-class>com.pasindujr.bumblebeeloans.controller.LogoutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
 </web-app>
