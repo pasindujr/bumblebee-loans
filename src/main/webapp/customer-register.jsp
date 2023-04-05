@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
+<%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <!--
 * Bootstrap Simple Admin Template
@@ -41,6 +42,10 @@
             <li>
                 <a href="stock"><i class="fas fa-file-alt"></i>Manage Stock</a>
             </li>
+            <li>
+                <a href="customer"><i class="fas fa-file-alt"></i>Manage Customer</a>
+            </li>
+
         </ul>
     </nav>
     <div id="body" class="active">
@@ -65,6 +70,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                 <ul class="nav-list">
+
                                     <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                     </li>
                                 </ul>
@@ -77,46 +83,34 @@
         <br/>
         <br/>
         <div class="container">
-            <div class="container">
-                <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
                     <tag:if test="${message != null}">
                         <div class="alert alert-success" role="alert">
                                 ${message}
                         </div>
                     </tag:if>
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">Brand ID Search</div>
-                            <div class="card-body">
-                                <form method="get" action="brand">
-                                    <input required type="text" id="brandId" name="brandId" class="form-control"/>
-                                    <input type="hidden" name="type" value="specific"/>
-                                    <br/>
-                                    <button type="submit" class="btn btn-primary">Search the Product</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <br/>
-                    <br/>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">Update Brand</div>
-                                <div class="card-body">
-                                    <form method="post" action="brand">
-                                        <label for="brandId">Brand Id: </label>
-                                        <input type="text" id="brandId" name="brandId" class="form-control"
-                                               readonly="readonly" value="${brand.brandId}"/>
-                                        <label for="brandName">Product Name: </label>
-                                        <input type="text" id="brandName" name="brandName" class="form-control"
-                                               value="${brand.name}"/>
-                                        <input type="hidden" name="type" value="update"/>
-                                        <br/>
-                                        <button type="submit" class="btn btn-warning">Update Brand</button>
-                                    </form>
-                                </div>
-                            </div>
+
+                    <div class="card">
+                        <div class="card-header">Create New Product</div>
+                        <div class="card-body">
+                            <form method="post" action="customer">
+                                <label for="customerName">Customer Name: </label>
+                                <input type="text" id="customerName" name="customerName" class="form-control"/>
+
+                                <label for="dob">Customer DOB: </label>
+                                <input type="date" id="dob" name="dob" class="form-control"/>
+
+                                <label for="loanBalance">Loan Required: </label>
+                                <input max="15000" type="number" id="loanBalance" name="loanBalance" class="form-control"/>
+
+                                <label for="installmentPlan">Installment Plan: </label>
+                                <input max="3" type="number" id="installmentPlan" name="installmentPlan" class="form-control"/>
+
+                                <input type="hidden" name="type" value="add"/>
+                                </br>
+                                <button type="submit" class="btn btn-info">Register Product</button>
+                            </form>
                         </div>
                     </div>
                 </div>

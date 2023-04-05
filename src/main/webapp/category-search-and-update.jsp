@@ -92,7 +92,7 @@
                                     <input required type="text" id="categoryId" name="categoryId" class="form-control"/>
                                     <input type="hidden" name="type" value="specific"/>
                                     <br/>
-                                    <button type="submit" class="btn btn-primary">Search the Product</button>
+                                    <button type="submit" class="btn btn-primary">Search Category</button>
                                 </form>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                                                value="${category.name}"/>
                                         <input type="hidden" name="type" value="update"/>
                                         <br/>
-                                        <button type="submit" class="btn btn-warning">Update Product</button>
+                                        <button type="submit" class="btn btn-warning">Update Category</button>
                                     </form>
                                 </div>
                             </div>

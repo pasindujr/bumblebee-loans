@@ -33,14 +33,13 @@ public class CustomerManager {
 
         Connection connection = getConncetion();
 
-        String query = "INSERT INTO customer (name, dob, loan_balance, used_amount, installment_plan) VALUES (?, ?, ?,?,?)";
+        String query = "INSERT INTO customer (name, dob, loan_balance, installment_plan) VALUES (?, ?,?,?)";
 
         PreparedStatement ps = connection.prepareStatement(query);
         ps.setString(1, customer.getName());
         ps.setString(2, customer.getDob());
         ps.setString(3, customer.getLoanBalance());
-        ps.setString(4, customer.getUsedAmount());
-        ps.setString(5, customer.getInstallmentPlan());
+        ps.setString(4, customer.getInstallmentPlan());
 
         int result = ps.executeUpdate();
 
@@ -108,7 +107,7 @@ public class CustomerManager {
 
         Connection connection = getConncetion();
 
-        String query = "UPDATE customer SET name = ?, dob = ?, loan_balance = ?, used_amount = ?, installment_plan = ?,  WHERE customer_id = ?";
+        String query = "UPDATE customer SET name = ?, dob = ?, loan_balance = ?, used_amount = ?, installment_plan = ?  WHERE customer_id = ?";
 
         PreparedStatement ps = connection.prepareStatement(query);
         ps.setString(1, customer.getName());

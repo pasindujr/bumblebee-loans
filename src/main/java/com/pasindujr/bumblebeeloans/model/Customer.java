@@ -30,6 +30,13 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(String name, String dob, String loanBalance, String installmentPlan) {
+        this.name = name;
+        this.dob = dob;
+        this.loanBalance = loanBalance;
+        this.installmentPlan = installmentPlan;
+    }
+
     public int getCustomerId() {
         return customerId;
     }

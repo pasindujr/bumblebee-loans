@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
+<%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <!--
 * Bootstrap Simple Admin Template
@@ -21,6 +23,8 @@
 
 <body>
 <div class="wrapper">
+
+
     <nav id="sidebar" class="active">
         <div class="sidebar-header">
             <img src="assets/img/bootstraper-logo.png" alt="bootraper logo" class="app-logo">
@@ -40,6 +44,9 @@
             </li>
             <li>
                 <a href="stock"><i class="fas fa-file-alt"></i>Manage Stock</a>
+            </li>
+            <li>
+                <a href="customer"><i class="fas fa-file-alt"></i>Manage Customer</a>
             </li>
         </ul>
     </nav>
@@ -74,47 +81,58 @@
                 </ul>
             </div>
         </nav>
-        <br/>
-        <br/>
-        <div class="container">
+        <!-- end of navbar navigation -->
+        <div class="content">
             <div class="container">
                 <div class="row">
-                    <tag:if test="${message != null}">
-                        <div class="alert alert-success" role="alert">
-                                ${message}
-                        </div>
-                    </tag:if>
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">Brand ID Search</div>
-                            <div class="card-body">
-                                <form method="get" action="brand">
-                                    <input required type="text" id="brandId" name="brandId" class="form-control"/>
-                                    <input type="hidden" name="type" value="specific"/>
-                                    <br/>
-                                    <button type="submit" class="btn btn-primary">Search the Product</button>
-                                </form>
-                            </div>
-                        </div>
+                    <div class="col-md-12 page-header">
+                        <div class="page-pretitle">Overview</div>
+                        <h2 class="page-title">Dashboard</h2>
                     </div>
+                </div>
+                <div class="row">
+                    <p>${message}</p>
                     <br/>
-                    <br/>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">Update Brand</div>
-                                <div class="card-body">
-                                    <form method="post" action="brand">
-                                        <label for="brandId">Brand Id: </label>
-                                        <input type="text" id="brandId" name="brandId" class="form-control"
-                                               readonly="readonly" value="${brand.brandId}"/>
-                                        <label for="brandName">Product Name: </label>
-                                        <input type="text" id="brandName" name="brandName" class="form-control"
-                                               value="${brand.name}"/>
-                                        <input type="hidden" name="type" value="update"/>
-                                        <br/>
-                                        <button type="submit" class="btn btn-warning">Update Brand</button>
-                                    </form>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Customer Table</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Customer ID</th>
+                                            <th>Customer Name</th>
+                                            <th>Loan Amount</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tag:forEach var="customer" items="${customerList}">
+                                            <tr>
+                                                <td>${customer.customerId}</td>
+                                                <td>${customer.name}</td>
+                                                <td>${customer.loanBalance}</td>
+                                                <td>
+                                                    <form method="get" action="customer">
+                                                        <input type="hidden" name="customerId"
+                                                               value="${customer.customerId}"/>
+                                                        <input type="hidden" name="type" value="specific"/>
+                                                        <button type="submit" class="btn btn-warning">Edit
+                                                        </button>
+                                                    </form>
+                                                    <form method="post" action="customer">
+                                                        <input type="hidden" name="customerId"
+                                                               value="${customer.customerId}"/>
+                                                        <input type="hidden" name="type" value="delete"/>
+                                                        <button type="submit" class="btn btn-danger">Delete
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tag:forEach>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

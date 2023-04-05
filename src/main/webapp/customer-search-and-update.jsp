@@ -41,6 +41,9 @@
             <li>
                 <a href="stock"><i class="fas fa-file-alt"></i>Manage Stock</a>
             </li>
+            <li>
+                <a href="customer"><i class="fas fa-file-alt"></i>Manage Customer</a>
+            </li>
         </ul>
     </nav>
     <div id="body" class="active">
@@ -86,13 +89,13 @@
                     </tag:if>
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">Brand ID Search</div>
+                            <div class="card-header">Customer ID Search</div>
                             <div class="card-body">
-                                <form method="get" action="brand">
-                                    <input required type="text" id="brandId" name="brandId" class="form-control"/>
+                                <form method="get" action="customer">
+                                    <input required type="text" id="customerId" name="customerId" class="form-control"/>
                                     <input type="hidden" name="type" value="specific"/>
                                     <br/>
-                                    <button type="submit" class="btn btn-primary">Search the Product</button>
+                                    <button type="submit" class="btn btn-primary">Search Customer</button>
                                 </form>
                             </div>
                         </div>
@@ -102,18 +105,37 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-header">Update Brand</div>
+                                <div class="card-header">Update Customer</div>
                                 <div class="card-body">
-                                    <form method="post" action="brand">
-                                        <label for="brandId">Brand Id: </label>
-                                        <input type="text" id="brandId" name="brandId" class="form-control"
-                                               readonly="readonly" value="${brand.brandId}"/>
-                                        <label for="brandName">Product Name: </label>
-                                        <input type="text" id="brandName" name="brandName" class="form-control"
-                                               value="${brand.name}"/>
+                                    <form method="post" action="customer">
+                                        <label for="customerId">Customer Id: </label>
+
+                                        <input type="text" id="customerId" name="customerId" class="form-control"
+                                               readonly="readonly" value="${customer.customerId}"/>
+
+                                        <label for="customerName">Customer Name: </label>
+                                        <input type="text" id="customerName" name="customerName" class="form-control"
+                                               value="${customer.name}"/>
+
+                                        <label for="dob">Customer DOB: </label>
+                                        <input type="date" id="dob" name="dob" class="form-control"
+                                               value="${customer.dob}"/>
+
+                                        <label for="loanBalance">Loan Amount: </label>
+                                        <input max="15000" type="number" id="loanBalance" name="loanBalance" class="form-control"
+                                               value="${customer.loanBalance}"/>
+
+                                        <label for="usedAmount">Used Amount: </label>
+                                        <input max="15000" type="number" id="usedAmount" name="usedAmount" class="form-control"
+                                               value="${customer.usedAmount}"/>
+
+                                        <label for="installmentPlan">Used Amount: </label>
+                                        <input max="3" type="number" id="installmentPlan" name="installmentPlan" class="form-control"
+                                               value="${customer.installmentPlan}"/>
+
                                         <input type="hidden" name="type" value="update"/>
                                         <br/>
-                                        <button type="submit" class="btn btn-warning">Update Brand</button>
+                                        <button type="submit" class="btn btn-warning">Update Customer</button>
                                     </form>
                                 </div>
                             </div>

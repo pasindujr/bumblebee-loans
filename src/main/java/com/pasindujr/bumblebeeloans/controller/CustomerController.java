@@ -60,10 +60,9 @@ public class CustomerController extends HttpServlet {
         String customerName = request.getParameter("customerName");
         String dob = request.getParameter("dob");
         String loanBalance = request.getParameter("loanBalance");
-        String usedAmount = request.getParameter("usedAmount");
         String installmentPlan = request.getParameter("installmentPlan");
 
-        Customer customer = new Customer(customerName, dob, loanBalance, usedAmount, installmentPlan);
+        Customer customer = new Customer(customerName, dob, loanBalance, installmentPlan);
         try {
 
             boolean result = service.registerCustomer(customer);
@@ -136,7 +135,7 @@ public class CustomerController extends HttpServlet {
         String message = null;
 
         int customerId = Integer.parseInt(request.getParameter("customerId"));
-        String customerName = request.getParameter("name");
+        String customerName = request.getParameter("customerName");
         String dob = request.getParameter("dob");
         String loanBalance = request.getParameter("loanBalance");
         String usedAmount = request.getParameter("usedAmount");
