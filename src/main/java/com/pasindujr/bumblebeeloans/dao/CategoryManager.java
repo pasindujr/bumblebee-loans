@@ -24,14 +24,14 @@ public class CategoryManager {
 		return factory.getDbConnector();
 	}
 	
-	private Connection getConncetion() throws ClassNotFoundException, SQLException {
+	private Connection getConnection() throws ClassNotFoundException, SQLException {
 		DbConnector connector =  getDbConnector();
 		return connector.getDbConnection();
 	}
 		
 	public boolean addCategory(Category category) throws ClassNotFoundException, SQLException {
 				
-		Connection connection = getConncetion();
+		Connection connection = getConnection();
 		
 		String query = "INSERT INTO category (name) VALUES (?)";
 		
@@ -48,7 +48,7 @@ public class CategoryManager {
 	
 	public Category getSpecificCategory(int categoryId) throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();
+		Connection connection = getConnection();
 		
 		String query = "SELECT * FROM category WHERE category_id = ?";
 		PreparedStatement ps = connection.prepareStatement(query);
@@ -69,7 +69,7 @@ public class CategoryManager {
 	
 	public List<Category> getAllCategories() throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();	
+		Connection connection = getConnection();
 		
 		String query = "SELECT * FROM CATEGORY";
 		
@@ -94,7 +94,7 @@ public class CategoryManager {
 	
 	public boolean updateCategory(Category category) throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();	
+		Connection connection = getConnection();
 		
 		String query = "UPDATE category SET name = ? WHERE category_id = ?";
 		
@@ -112,7 +112,7 @@ public class CategoryManager {
 	
 	public boolean deleteCategory(int categoryId) throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();
+		Connection connection = getConnection();
 		
 		String query = "DELETE FROM CATEGORY WHERE category_id = ?";
 		

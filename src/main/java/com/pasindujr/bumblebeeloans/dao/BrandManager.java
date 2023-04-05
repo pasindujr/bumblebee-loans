@@ -24,14 +24,14 @@ public class BrandManager {
 		return factory.getDbConnector();
 	}
 	
-	private Connection getConncetion() throws ClassNotFoundException, SQLException {
+	private Connection getConnection() throws ClassNotFoundException, SQLException {
 		DbConnector connector =  getDbConnector();
 		return connector.getDbConnection();
 	}
 		
 	public boolean addBrand(Brand brand) throws ClassNotFoundException, SQLException {
 				
-		Connection connection = getConncetion();
+		Connection connection = getConnection();
 		
 		String query = "INSERT INTO brand (name) VALUES (?)";
 		
@@ -48,7 +48,7 @@ public class BrandManager {
 	
 	public Brand getSpecificBrand(int brandId) throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();
+		Connection connection = getConnection();
 		
 		String query = "SELECT * FROM brand WHERE brand_id = ?";
 		PreparedStatement ps = connection.prepareStatement(query);
@@ -69,7 +69,7 @@ public class BrandManager {
 	
 	public List<Brand> getAllBrands() throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();	
+		Connection connection = getConnection();
 		
 		String query = "SELECT * FROM BRAND";
 		
@@ -94,7 +94,7 @@ public class BrandManager {
 	
 	public boolean updateBrand(Brand brand) throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();	
+		Connection connection = getConnection();
 		
 		String query = "UPDATE brand SET name = ? WHERE brand_id = ?";
 		
@@ -112,7 +112,7 @@ public class BrandManager {
 	
 	public boolean deleteBrand(int brandId) throws ClassNotFoundException, SQLException {
 		
-		Connection connection = getConncetion();
+		Connection connection = getConnection();
 		
 		String query = "DELETE FROM BRAND WHERE brand_id = ?";
 		

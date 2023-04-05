@@ -59,4 +59,15 @@
         <servlet-name>CustomerController</servlet-name>
         <url-pattern>/customer</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminLoginController</servlet-name>
+        <display-name>AdminLoginController</display-name>
+        <description>This will handle all the admin auth related requests</description>
+        <servlet-class>com.pasindujr.bumblebeeloans.controller.AdminLoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginController</servlet-name>
+        <url-pattern>/adminlogin</url-pattern>
+    </servlet-mapping>
 </web-app>
