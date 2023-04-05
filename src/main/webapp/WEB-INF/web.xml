@@ -48,4 +48,15 @@
         <servlet-name>StockController</servlet-name>
         <url-pattern>/stock</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerController</servlet-name>
+        <display-name>CustomerController</display-name>
+        <description>This will handle all the customer related requests</description>
+        <servlet-class>com.pasindujr.bumblebeeloans.controller.CustomerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerController</servlet-name>
+        <url-pattern>/customer</url-pattern>
+    </servlet-mapping>
 </web-app>
