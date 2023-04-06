@@ -69,7 +69,7 @@
                                            value="${product.name}"/>
 
                                     <label for="productName">Product Price: </label>
-                                    <input type="text" id="price" name="price" class="form-control"
+                                    <input type="number" id="price" name="price" class="form-control"
                                            value="${product.price}"/>
 
                                     <label for="category" class="form-label">Select a category</label>

@@ -52,7 +52,7 @@
                             </select>
 
                             <label for="quantity">Quantity: </label>
-                            <input type="text" id="quantity" name="quantity" class="form-control"/>
+                            <input type="number" id="quantity" name="quantity" class="form-control"/>
 
                             <input type="hidden" name="type" value="add"/>
                             </br>

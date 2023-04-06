@@ -46,7 +46,7 @@
                             <input type="text" id="productName" name="productName" class="form-control"/>
 
                             <label for="price">Product Price: </label>
-                            <input type="text" id="price" name="price" class="form-control"/>
+                            <input type="number" id="price" name="price" class="form-control"/>
 
                             <label for="brand" class="form-label">Select a brand</label>
                             <select id="brand" name="brand" class="form-select" required>
