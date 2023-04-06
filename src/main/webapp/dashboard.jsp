@@ -3,12 +3,22 @@
 <%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");%>
+<%@page import="com.pasindujr.bumblebeeloans.dao.DashboardManager"%>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 
 <%
     HttpSession httpSession = (HttpSession) request.getSession();
     String user = (String) httpSession.getAttribute("loggedUser");
     String role = (String) httpSession.getAttribute("role");
     if (role != null && role.equals("ADMIN")) {
+        Connection con;
+        DashboardManager db = new DashboardManager();
+        con = db.getConnection();
+        Statement st = con.createStatement();
 
 %>
 <!doctype html>
@@ -33,6 +43,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <!-- MAIN CARDS STARTS HERE -->
+                <div class="main__cards">
+                    <div class="card">
+                        <i
+                                class="fa fa-user-o fa-2x text-lightblue"
+                                aria-hidden="true"
+                        ></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Number of Registered users</p>
+                            <%
+                                //String query = "SELECT COUNT(*) FROM user";
+                                //ResultSet r = st.executeQuery(query);
+                                //r.next();
+                            %>
+                            <span class="font-bold text-title"><%%></span>
+                        </div>
+                    </div>
 
 
                 <div class="card">
