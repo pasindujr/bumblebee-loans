@@ -15,9 +15,7 @@
     String user = (String) httpSession.getAttribute("loggedUser");
     String role = (String) httpSession.getAttribute("role");
     if (role != null && role.equals("ADMIN")) {
-        Connection con;
-        DashboardManager db = new DashboardManager();
-        con = db.getConnection();
+        Connection con = DashboardManager.getConnection();
         Statement st = con.createStatement();
 
 %>
@@ -51,13 +49,13 @@
                                 aria-hidden="true"
                         ></i>
                         <div class="card_inner">
-                            <p class="text-primary-p">Number of Registered users</p>
+                            <p class="text-primary-p">Number of customers</p>
                             <%
-                                //String query = "SELECT COUNT(*) FROM user";
-                                //ResultSet r = st.executeQuery(query);
-                                //r.next();
+                                String query = "SELECT COUNT(*) FROM customer";
+                                ResultSet r = st.executeQuery(query);
+                                r.next();
                             %>
-                            <span class="font-bold text-title"><%%></span>
+                            <span class="font-bold text-title"><%=r.getInt(1)%></span>
                         </div>
                     </div>
 
