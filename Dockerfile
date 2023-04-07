@@ -5,4 +5,4 @@ ADD target/bumblebee-loans.war bumblebee-loans.war
 ENTRYPOINT ["java","-war","/bumblebee-loans.war"]
 
 ARG APP_NAME=bumblebee-loans
-ARG APP_VERSION=0.0.2
+ARG APP_VERSION=0.0.3
