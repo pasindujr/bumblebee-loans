@@ -51,6 +51,7 @@
                                     <tr>
                                         <th>Customer ID</th>
                                         <th>Customer Name</th>
+                                        <th>Customer Age</th>
                                         <th>Loan Amount</th>
                                         <th>Actions</th>
                                     </tr>
@@ -60,6 +61,7 @@
                                         <tr>
                                             <td>${customer.customerId}</td>
                                             <td>${customer.name}</td>
+                                            <td>${customer.age}</td>
                                             <td>${customer.loanBalance}</td>
                                             <td>
                                                 <form method="get" action="customer">

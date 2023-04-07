@@ -40,7 +40,7 @@
                 </tag:if>
 
                 <div class="card">
-                    <div class="card-header">Create New Product</div>
+                    <div class="card-header">Create New Category</div>
                     <div class="card-body">
                         <form method="post" action="category">
                             <label for="categoryName">Category Name: </label>

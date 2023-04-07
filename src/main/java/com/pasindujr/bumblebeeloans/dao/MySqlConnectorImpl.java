@@ -10,8 +10,8 @@ public class MySqlConnectorImpl implements DbConnector {
 	public Connection getDbConnection() throws ClassNotFoundException, SQLException {
 		
 		Class.forName("com.mysql.jdbc.Driver");
-		String url = "jdbc:mysql://127.0.0.1:3306/icbt_test";
-		String userName = "pasindu";
+		String url = "jdbc:mysql://127.0.0.1:3306/bumblebee";
+		String userName = "root";
 		String password = "";
 
 		return DriverManager.getConnection(url, userName, password);

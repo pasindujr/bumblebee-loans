@@ -38,6 +38,9 @@
                             <label for="dob">Customer DOB: </label>
                             <input type="date" id="dob" name="dob" class="form-control"/>
 
+                            <label for="age">Customer Age: </label>
+                            <input min="18" type="number" id="age" name="age" class="form-control"/>
+
                             <label for="loanBalance">Loan Required: </label>
                             <input max="15000" type="number" id="loanBalance" name="loanBalance" class="form-control"/>
 
@@ -47,7 +50,7 @@
 
                             <input type="hidden" name="type" value="add"/>
                             </br>
-                            <button type="submit" class="btn btn-info">Register Product</button>
+                            <button type="submit" class="btn btn-info">Register Customer</button>
                         </form>
                     </div>
                 </div>

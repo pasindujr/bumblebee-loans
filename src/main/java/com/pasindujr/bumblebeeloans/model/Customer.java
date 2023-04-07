@@ -5,23 +5,26 @@ public class Customer {
     private int customerId;
     private String name;
     private String dob;
+    private String age;
     private String loanBalance;
     private String usedAmount;
     private String installmentPlan;
 
 
-    public Customer(int customerId, String name, String dob, String loanBalance, String usedAmount, String installmentPlan) {
+    public Customer(int customerId, String name, String dob, String age, String loanBalance, String usedAmount, String installmentPlan) {
         this.customerId = customerId;
         this.name = name;
         this.dob = dob;
+        this.age = age;
         this.loanBalance = loanBalance;
         this.usedAmount = usedAmount;
         this.installmentPlan = installmentPlan;
     }
 
-    public Customer(String name, String dob, String loanBalance, String usedAmount, String installmentPlan) {
+    public Customer(String name, String dob, String age, String loanBalance, String usedAmount, String installmentPlan) {
         this.name = name;
         this.dob = dob;
+        this.age = age;
         this.loanBalance = loanBalance;
         this.usedAmount = usedAmount;
         this.installmentPlan = installmentPlan;
@@ -30,9 +33,10 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, String dob, String loanBalance, String installmentPlan) {
+    public Customer(String name, String dob, String age, String loanBalance, String installmentPlan) {
         this.name = name;
         this.dob = dob;
+        this.age = age;
         this.loanBalance = loanBalance;
         this.installmentPlan = installmentPlan;
     }
@@ -83,5 +87,13 @@ public class Customer {
 
     public void setInstallmentPlan(String installmentPlan) {
         this.installmentPlan = installmentPlan;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

@@ -59,10 +59,11 @@ public class CustomerController extends HttpServlet {
 
         String customerName = request.getParameter("customerName");
         String dob = request.getParameter("dob");
+        String age = request.getParameter("age");
         String loanBalance = request.getParameter("loanBalance");
         String installmentPlan = request.getParameter("installmentPlan");
 
-        Customer customer = new Customer(customerName, dob, loanBalance, installmentPlan);
+        Customer customer = new Customer(customerName, dob, age, loanBalance, installmentPlan);
         try {
 
             boolean result = service.registerCustomer(customer);
@@ -137,11 +138,12 @@ public class CustomerController extends HttpServlet {
         int customerId = Integer.parseInt(request.getParameter("customerId"));
         String customerName = request.getParameter("customerName");
         String dob = request.getParameter("dob");
+        String age = request.getParameter("age");
         String loanBalance = request.getParameter("loanBalance");
         String usedAmount = request.getParameter("usedAmount");
         String installmentPlan = request.getParameter("installmentPlan");
 
-        Customer customer = new Customer(customerId, customerName, dob, loanBalance, usedAmount, installmentPlan);
+        Customer customer = new Customer(customerId, customerName, dob, age, loanBalance, usedAmount, installmentPlan);
 
         try {
             boolean result = service.editTheCustomer(customer);

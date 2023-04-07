@@ -71,6 +71,10 @@
                                     <input type="date" id="dob" name="dob" class="form-control"
                                            value="${customer.dob}"/>
 
+                                    <label for="age">Customer Age: </label>
+                                    <input min="18" type="number" id="age" name="age" class="form-control"
+                                           value="${customer.age}"/>
+
                                     <label for="loanBalance">Loan Amount: </label>
                                     <input max="15000" type="number" id="loanBalance" name="loanBalance"
                                            class="form-control"
